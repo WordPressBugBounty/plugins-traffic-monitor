@@ -1,0 +1,153 @@
+name,category,block,log_request
+aasa-bot,Search Engine Crawler,0,0
+a6-indexer,Search Engine Crawler,0,0
+accessibility-insights,Validation Tool,0,1
+adsbot-google,Advertising Bot,0,0
+adsbot-google-mobile,Advertising Bot,0,0
+ahrefsbot,SEO Analyzer,1,0
+akamai,Page Speed Analysis,0,1
+aliyunsecbot,Vulnerability Scanner,1,0
+amphtml-validator,Validation Tool,0,1
+apis-google,API Scraper,1,0
+appengine-google,API Scraper,1,0
+applebot,Search Engine Crawler,0,0
+avast,Malware Scanner,0,1
+awariobot,Competitive Analysis,1,0
+awariorssbot,Competitive Analysis,1,0
+awariosmartbot,Competitive Analysis,1,0
+axe-core,Validation Tool,0,1
+axios,API Scraper,1,0
+backlinksextendedbot,SEO Analyzer,1,0
+baidu,Search Engine Crawler,0,0
+baiduspider,Search Engine Crawler,0,0
+bingadsbot,Advertising Bot,0,0
+bingbot,Search Engine Crawler,0,0
+bitsightbot,Competitive Analysis,1,0
+blexbot,SEO Analyzer,1,0
+bytedancer,AI Trainer Bad,1,0
+bytespider,AI Trainer Bad,1,0
+cc_bot,Spam Bot,1,0
+ccleaner,Malware Scanner,0,1
+chatgpt-user,AI Trainer Good,1,0
+checkmarknetwork,Advertising Bot,0,0
+chrome privacy preserving prefetch proxy,Link Preview Generator,0,0
+claude-searchbot,AI Trainer Good,1,0
+cloudflare,Page Speed Analysis,0,1
+crawler_eb_germany,Competitive Analysis,1,0
+curl,API Scraper,1,0
+dataprovider.com,Data Aggregator,1,0
+dnbcrawler,Competitive Analysis,1,0
+dotbot,SEO Analyzer,1,0
+duckassistbot,AI Trainer Bad,1,0
+duckduckbot,Search Engine Crawler,0,0
+emailsiphon,Contact Scraper,1,0
+emailwolf,Contact Scraper,1,0
+embedly,Link Preview Generator,0,0
+exabot,SEO Analyzer,1,0
+facebookadsbot,Advertising Bot,0,0
+facebookexternalhit,Link Preview Generator,0,0
+facebot,Link Preview Generator,0,0
+fastly,Page Speed Analysis,0,1
+feedfetcher-google,Data Aggregator,1,0
+fh muenster,Vulnerability Scanner,1,0
+gigabot,SEO Analyzer,1,0
+go-http-client,API Scraper,1,0
+google page speed,Page Speed Analysis,0,1
+google-adwords-express,Advertising Bot,0,0
+google-read-aloud,Accessibility Tool,0,1
+googlebot,Search Engine Crawler,0,0
+googlebot-image,Search Engine Crawler,0,0
+googlebot-news,Search Engine Crawler,0,0
+googlebot-video,Search Engine Crawler,0,0
+google-cloudvertexbot,AI Trainer Bad,1,0
+google-extended,AI Trainer Bad,1,0
+google-inspectiontool,Search Engine Crawler,0,0
+googleother,Search Engine Crawler,0,0
+googleother-image,Search Engine Crawler,0,0
+googleother-video,Search Engine Crawler,0,0
+googleproducer,Data Aggregator,1,0
+google-safety,Malware Scanner,0,1
+google-site-verification,Validation Tool,0,1
+gptbot,AI Trainer Good,1,0
+gtmetrix,Page Speed Analysis,0,1
+guzzlehttp,API Scraper,1,0
+headlesschrome,SEO Analyzer,1,0
+httrack,Website Copier,1,0
+ia_archiver,Data Aggregator,1,0
+iframely,Link Preview Generator,0,0
+imagesiftbot,Data Aggregator,1,0
+imessagebot,Link Preview Generator,0,0
+impervabot,Malware Scanner,0,1
+instagram-crawler,Social Media Scraper,1,0
+keycdn,Page Speed Analysis,0,1
+lighthouse,Page Speed Analysis,0,1
+linkedinadsbot,Advertising Bot,0,0
+linkedinbot,Link Preview Generator,0,0
+make/production,API Scraper,0,1
+matchorysearch,Data Aggregator,1,0
+mediapartners-google,Advertising Bot,0,0
+meta-externalads,Advertising Bot,0,0
+meta-externalagent,Link Preview Generator,0,0
+mixrankbot,seo analyzer,1,0
+mj12bot,SEO Analyzer,1,0
+nitro-webhook-agent,Contact Scraper,1,0
+oai-searchbot,AI Trainer Good,1,0
+oculusbrowser,Competitive Analysis,1,0
+okhttp,API Scraper,1,0
+open-graph-validator,Validation Tool,0,1
+orbbot,Competitive Analysis,1,0
+pageburst,SEO Analyzer,1,0
+panscient,Contact Scraper,1,0
+perplexitybot,AI Trainer Good,1,0
+perplexity-user,AI Trainer Good,1,0
+petalbot,Data Aggregator,1,0
+php scraper,API Scraper,1,0
+pingdom,Page Speed Analysis,0,1
+pinterest,Link Preview Generator,0,0
+pinterestadsbot,Advertising Bot,0,0
+pinterestbot,Link Preview Generator,0,0
+ptst,Page Speed Analysis,0,1
+python,API Scraper,1,0
+quantilbot,Data Aggregator,1,0
+quora,Data Aggregator,1,0
+qwantbot,Search Engine Crawler,0,0
+redditadsbot,Advertising Bot,0,0
+roverbot,SEO Analyzer,1,0 
+schema-validator,Validation Tool,0,1
+scrapy,Data Aggregator,1,0
+semantibot,SEO Analyzer,1,0
+semrushbot,SEO Analyzer,1,0
+serpstatbot,SEO Analyzer,1,0
+seznambot,Search Engine Crawler,0,0
+sindresorhus/got,API Scraper,1,0
+skypeuripreview,Link Preview Generator,0,0
+slackbot,Link Preview Generator,0,0
+slurp,Search Engine Crawler,0,0
+snap url preview service,link preview generator,0,0
+snapchatadsbot,Advertising Bot,0,0
+sogou,Search Engine Crawler,0,0
+spambot,Spam Bot,1,0
+storebot-google,Search Engine Crawler,0,0
+structured-data-testing-tool,Validation Tool,0,1
+telegrambot,Link Preview Generator,0,0
+teoma,Search Engine Crawler,0,0
+tiktokadsbot,Advertising Bot,0,0
+tiktok-bot,Social Media Scraper,1,0
+tiktokspider,Social Media Scraper,1,0
+twitteradsbot,Advertising Bot,0,0
+twitterbot,Link Preview Generator,0,0
+udu/,API Scraper,1,0
+validator.nu,Validation Tool,0,1
+vkshare,Link Preview Generator,0,0
+w3c_validator,Validation Tool,0,1
+web_fetcher,Data Aggregator,1,0
+wappalyzer,Competitive Analysis,1,0
+webpagetest,Page Speed Analysis,0,1
+wget,Website Copier,1,0
+whatsapp,Link Preview Generator,0,0
+yelpbot,Data Aggregator,1,0
+yandex,Search Engine Crawler,0,0
+yandexbot,Search Engine Crawler,0,0
+zohosalesiq,Contact Scraper,1,0
+zoombot,SEO Analyzer,1,0
+zoominfobot,Data Aggregator,1,0

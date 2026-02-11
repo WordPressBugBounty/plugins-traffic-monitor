@@ -1,0 +1,22 @@
+category,block,log_request,description
+Accessibility Tool,0,1,Bots used to assist users with disabilities.
+Advertising Bot,0,0,Bots used by ad platforms to verify ads or landing pages. Not billable.
+AI Trainer Good,0,0,Bots gathering data for machine learning that cite source.
+AI Trainer Bad,1,0,Bots gathering data for machine learning without SEO benefit.
+API Scraper,1,0,Bots scraping responses from API endpoints.
+Archive Bot,0,1,Bots archiving site content (Wayback Machine).
+Competitive Analysis,1,0,Bots for checking own or competitor sites.
+Contact Scraper,1,0,Bots harvesting contact information.
+Data Aggregator,1,0,Bots aggregating information like news or pricing.
+Link Preview Generator,0,0,Bots generating link previews for social media.
+Load Testing,1,0,Bots performing load or stress tests.
+Malware Scanner,0,1,Bots checking for malicious content to improve security.
+Page Speed Analysis,0,1,Bots that measure page speed metrics.
+Search Engine Crawler,0,0,Bots that indexing pages for search engines.
+SEO Analyzer,1,0,Bots that analyze backlinks or technical SEO.
+Social Media Scraper,1,0,Bots that scrape content for social media.
+Spam Bot,1,0,Bots that spam forms on websites.
+Uptime Monitoring,0,1,Bots that check if websites are being served.
+Validation Tool,0,1,Bots that verify ownership and coding standards.
+Vulnerability Scanner,1,0,Bots that search websites for security vulnerabilities.
+Website Copier,1,0,Bots that replicate websites.

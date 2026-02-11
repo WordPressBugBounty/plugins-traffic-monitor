@@ -1,0 +1,115 @@
+/* assets/css/tfcm-style.css */
+.tfcm-header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: #fff;
+	border-bottom: 1px solid #b5bfc9;
+	padding: 10px 0 10px 20px;
+	height: 40px;
+	width: 100%;
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-top: 0;
+}
+
+.tfcm-header .tfcm-logo {
+	display: flex;
+	align-items: center;
+	padding-right: 20px;
+}
+
+.tfcm-header .tfcm-logo #tfcm-logo-40x40 {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.tfcm-header .tfcm-logo-text {
+	font-size: 22px;
+	font-weight: 500;
+	padding: 0;
+	margin: 0;
+	line-height: 1;
+}
+
+table.tfcm-request-detail-table {
+	margin: 20px 0;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tfcm-request-detail-table th,
+.tfcm-request-detail-table td {
+	padding: 5px 10px;
+	border: 1px solid #ddd;
+	vertical-align: top;
+}
+
+.tfcm-request-detail-table th {
+	width: 120px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.tfcm-request-detail-table td {
+	word-wrap: break-word;
+}
+
+.toplevel_page_traffic-monitor thead .check-column .sorting-indicators,
+.toplevel_page_traffic-monitor tfoot .check-column .sorting-indicators {
+	display: none;
+}
+
+.toplevel_page_traffic-monitor .wrap {
+	margin-top: 40px;
+}
+
+.toplevel_page_traffic-monitor p.search-box {
+	margin: 0;
+}
+
+@media screen and (max-width: 782px) {
+
+	.tablenav .view-switch,
+	.tablenav.top .actions {
+		display: block;
+	}
+
+	.toplevel_page_traffic-monitor p.search-box {
+		margin: 0;
+	}
+
+	.toplevel_page_traffic-monitor p.search-box input[name="s"] {
+		width: calc(100% - 80px);
+		margin-right: 0px;
+	}
+
+	.toplevel_page_traffic-monitor .tablenav.top {
+		margin: 5px 0 5px;
+	}
+
+	.toplevel_page_traffic-monitor .tablenav .tablenav-pages {
+		margin: 0 0 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.tfcm-header {
+		padding-top: 60px;
+	}
+
+	.toplevel_page_traffic-monitor #wpbody {
+		padding-top: 0;
+	}
+
+	.toplevel_page_traffic-monitor .alignright {
+		float: none;
+	}
+}
+
+#tfcm-old-log-export-notice {
+	margin-top: 40px;
+}
