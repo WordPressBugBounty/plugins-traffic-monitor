@@ -15,8 +15,16 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 }
 
 
+
+
+
+
 class TFCM_Log_Table extends WP_List_Table {
 	
+
+
+
+
 	public function get_columns() {
 		$columns = array(
 			'cb'               => '<input type="checkbox" />',
@@ -47,6 +55,10 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
 	public function get_hidden_columns() {
 		$user           = get_current_user_id();
 		$screen         = get_current_screen();
@@ -56,6 +68,10 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
 	public function get_bulk_actions() {
 		$actions = array(
 			'delete' => 'Delete',
@@ -65,6 +81,15 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
+
+
+
 	protected function display_tablenav( $which ) {
 		?>
 		<div class="tablenav <?php echo esc_attr( $which ); ?>">
@@ -94,6 +119,11 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
 	public function column_cb( $item ) {
 		return sprintf(
 			'<input type="checkbox" name="element[]" value="%s" aria-label="Select row for %s" />',
@@ -103,6 +133,14 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
+
+
 	public function column_default( $item, $column_name ) {
 		if ( 'request_time' === $column_name ) {
 			$view_url = add_query_arg(
@@ -128,11 +166,19 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
 	public function no_items() {
 		echo 'No requests found.';
 	}
 
 	
+
+
+
+
 	public function prepare_items() {
 		global $wpdb;
 
@@ -189,6 +235,30 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public static function get_request_value( $key ) {
 		if ( isset( $_POST[ $key ] ) ) { 
 			return sanitize_text_field( wp_unslash( $_POST[ $key ] ) ); 
@@ -199,6 +269,13 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function render_log_table_filters() {
 		$screen = get_current_screen();
 		if ( $screen->id !== 'toplevel_page_traffic-monitor' ) {
@@ -286,6 +363,12 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
 	protected function pagination( $which ) {
 		if ( empty( $this->_pagination_args['total_items'] ) ) {
 			return;
@@ -341,6 +424,15 @@ class TFCM_Log_Table extends WP_List_Table {
 	}
 
 	
+
+
+
+
+
+
+
+
+
 	protected function get_navigation_arrow_links( $current, $total_pages, $base_url, $add_args, $prev = true ) {
 		$output = array();
 

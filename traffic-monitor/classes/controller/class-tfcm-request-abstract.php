@@ -10,6 +10,15 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
+
+
+
+
+
 abstract class TFCM_Request_Abstract {
 	public $request_time;
 	public $request_url;
@@ -41,6 +50,8 @@ abstract class TFCM_Request_Abstract {
 	public $status_code;
 
 	
+
+
 	public function __construct() {
 		$this->request_time   = current_time( 'mysql' );
 		$this->request_url    = ''; 
@@ -88,6 +99,12 @@ abstract class TFCM_Request_Abstract {
 	}
 
 	
+
+
+
+
+
+
 	private static function get_user_role() {
 		$user_role = 'visitor';
 		if ( is_user_logged_in() ) {
@@ -100,6 +117,16 @@ abstract class TFCM_Request_Abstract {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
 	private static function get_user_agent_data() {
 		
 		$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? null;
@@ -325,6 +352,60 @@ REGEX,
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public static function get_ad_key_value( $query_string ) {
 		$known_keys = self::get_supported_ad_keys();
 
@@ -370,6 +451,16 @@ REGEX,
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
 	public static function get_supported_ad_keys() {
 		return array(
 			'gclid'     => 'Google Ads',
@@ -387,6 +478,12 @@ REGEX,
 	}
 
 	
+
+
+
+
+
+
 	public function get_source( $ad_platform = null, $referrer_url = null ) {
 		$bot_name        = $this->bot_name;
 		$referrer_domain = $this->get_domain_from_url( $referrer_url );
@@ -436,6 +533,11 @@ REGEX,
 	}
 
 	
+
+
+
+
+
 	protected function get_domain_from_url( $url ) {
 		if ( empty( $url ) ) {
 			return null;

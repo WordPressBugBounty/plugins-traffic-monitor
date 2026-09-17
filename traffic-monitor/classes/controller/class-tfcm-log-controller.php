@@ -10,15 +10,32 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Log_Controller {
 	private $request;
 
 	
+
+
+
+
+
+
 	public function __construct( $request ) {
 		$this->request = $request;
 	}
 
 	
+
+
+
+
+
+
+
 	public function process_request() {
 		global $tfcm_request_type;
 
@@ -89,6 +106,16 @@ class TFCM_Log_Controller {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
 	private function should_log_request() {
 		$accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_ACCEPT'] ) ) : '';
 		$path   = wp_parse_url( $this->request->request_url, PHP_URL_PATH );

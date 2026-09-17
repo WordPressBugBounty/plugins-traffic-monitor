@@ -65,6 +65,17 @@ jQuery(document).ready(function ($) {
 		 * @param {string} action The bulk action to perform ('delete_all' or 'export_all').
 		 */
 		function handleGlobalAction(action) {
+			const $button = action === 'export_all' ? $('#tfcm-export-all') : $('#tfcm-delete-all');
+
+			$button.prop('disabled', true);
+
+			if (action === 'export_all') {
+				showNotice(
+					'info',
+					'Export in progress. Large traffic logs may take several minutes to process. Please do not refresh or leave this page until the export is complete.'
+				);
+			}
+
 			$.ajax({
 				url: tfcmAdmin.ajax_url,
 				type: 'POST',
@@ -85,6 +96,9 @@ jQuery(document).ready(function ($) {
 				},
 				error: function () {
 					showNotice('error', 'An error occurred while processing your request.');
+				},
+				complete: function () {
+					$button.prop('disabled', false);
 				}
 			});
 		}

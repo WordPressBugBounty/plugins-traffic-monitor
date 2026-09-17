@@ -11,8 +11,18 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Request_Controller {
 	
+
+
+
+
+
+
 	public static function register_hooks() {
 		
 		add_action( 'wp_ajax_nopriv_tfcm_get_ip', array( __CLASS__, 'get_client_ip' ) );
@@ -27,6 +37,14 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
+
+
+
+
 	public static function get_client_ip() {
 		$origin      = isset( $_SERVER['HTTP_ORIGIN'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_ORIGIN'] ) ) : '';
 		$origin_host = wp_parse_url( $origin, PHP_URL_HOST );
@@ -43,6 +61,12 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
+
+
 	public static function handle_ajax_request() {
 		global $tfcm_request_type;
 		$tfcm_request_type = 'AJAX';
@@ -50,6 +74,10 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
 	public static function handle_request() {
 		
 		global $tfcm_request_type;
@@ -103,6 +131,12 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
+
+
 	private static function handle_matched_bot( $bot_record, $request ) {
 		global $tfcm_request_type;
 
@@ -160,6 +194,11 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
+
 	private static function process_request_logging( $request ) {
 		
 
@@ -173,6 +212,13 @@ class TFCM_Request_Controller {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function handle_bulk_action() {
 
 		
@@ -236,9 +282,8 @@ class TFCM_Request_Controller {
 			TFCM_Export_Manager::generate_csv( $rows, $file_name, $total_rows );
 		} elseif ( 'export_all' === $bulk_action ) {
 			$total_rows = TFCM_Database::count_all_requests();
-			$rows       = TFCM_Database::get_all_requests();
 
-			TFCM_Export_Manager::generate_csv( $rows, $file_name, $total_rows );
+			TFCM_Export_Manager::generate_all_csv( $file_name, $total_rows );
 		}
 	}
 }

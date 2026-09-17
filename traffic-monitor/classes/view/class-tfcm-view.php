@@ -10,13 +10,27 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_View {
 	
+
+
+
+
 	public static function register_hooks() {
 		add_action( 'in_admin_header', array( __CLASS__, 'add_custom_header' ) );
 	}
 
 	
+
+
+
+
+
+
 	public static function add_custom_header() {
 		
 		$current_screen = get_current_screen();
@@ -34,6 +48,14 @@ class TFCM_View {
 	}
 
 	
+
+
+
+
+
+
+
+
 	public static function display_notice( $message, $type = 'info' ) {
 		$allowed_types = array( 'success', 'error', 'warning', 'info' );
 		$type          = in_array( $type, $allowed_types, true ) ? $type : 'info';
@@ -46,6 +68,12 @@ class TFCM_View {
 	}
 
 	
+
+
+
+
+
+
 	public static function display_back_button() {
 		printf(
 			'<p><a href="%s" class="button button-primary">Back to Log Table</a></p>',
@@ -54,6 +82,13 @@ class TFCM_View {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function render_request_details( $log ) {
 		?>
 		<div class="wrap">
@@ -84,6 +119,13 @@ class TFCM_View {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function render_admin_page( $tfcm_table ) {
 		?>
 	<div class="wrap">

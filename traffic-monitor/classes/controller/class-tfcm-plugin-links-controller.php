@@ -10,9 +10,15 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
 class TFCM_Plugin_Links_Controller {
 
 	
+
+
+
+
 	public static function register_hooks() {
 		add_filter( 'plugin_action_links_' . plugin_basename( TFCM_PLUGIN_FILE ), array( self::class, 'add_action_links' ) );
 		add_filter( 'plugin_row_meta', array( self::class, 'add_meta_links' ), 10, 2 );
@@ -20,6 +26,11 @@ class TFCM_Plugin_Links_Controller {
 	}
 
 	
+
+
+
+
+
 	public static function add_action_links( $links ) {
 		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=traffic-monitor' ) ) . '">Settings</a>';
 		array_unshift( $links, $settings_link );
@@ -27,6 +38,12 @@ class TFCM_Plugin_Links_Controller {
 	}
 
 	
+
+
+
+
+
+
 	public static function add_meta_links( $links, $file ) {
 		if ( plugin_basename( TFCM_PLUGIN_FILE ) === $file ) {
 			$links[] = "<a href='https://wordpress.org/support/plugin/traffic-monitor/' target='_blank'>Support</a>";
@@ -36,23 +53,25 @@ class TFCM_Plugin_Links_Controller {
 	}
 
 	
+
+
 	public static function add_star_styles() {
 		global $pagenow;
 		if ( $pagenow === 'plugins.php' ) { ?>
 				<style>
 					.tfcm-stars {
 						display: inline-block;
-						color: #ffb900;
+						color: 
 						position: relative;
 						top: 3px
 					}
 
 					.tfcm-stars svg {
-						fill: #ffb900
+						fill: 
 					}
 
 					.tfcm-stars svg:hover {
-						fill: #ffb900
+						fill: 
 					}
 
 					.tfcm-stars svg:hover ~ svg {

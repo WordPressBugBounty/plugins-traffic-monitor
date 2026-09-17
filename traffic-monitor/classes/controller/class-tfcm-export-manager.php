@@ -10,11 +10,23 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Export_Manager {
 	
+
+
+
+
 	private static $export_dir = TFCM_PLUGIN_DIR . 'exports/';
 
 	
+
+
+
+
 	public static function delete_old_exports() {
 		$find_files = glob( self::$export_dir . '*traffic-log-*.csv' );
 		$files      = $find_files ? $find_files : array();
@@ -24,6 +36,17 @@ class TFCM_Export_Manager {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
 	public static function generate_csv( $rows, $file_name, $total_rows, $return_on_update = false ) {
 		global $wp_filesystem;
 
@@ -64,6 +87,61 @@ class TFCM_Export_Manager {
 	}
 
 	
+
+
+
+
+
+
+	public static function generate_all_csv( $file_name, $total_rows ) {
+		$file_path = self::$export_dir . $file_name;
+		$file_url  = plugins_url( 'exports/' . $file_name, TFCM_PLUGIN_FILE );
+		$file      = fopen( $file_path, 'w' );
+
+		if ( false === $file ) {
+			wp_send_json_error( array( 'message' => 'Failed to create the export file.' ), 400 );
+		}
+
+		$batch_size = 5000;
+		$last_id    = 0;
+		$header     = false;
+
+		do {
+			$rows = TFCM_Database::get_request_export_batch( $last_id, $batch_size );
+
+			if ( empty( $rows ) ) {
+				break;
+			}
+
+			if ( false === $header ) {
+				fputcsv( $file, array_keys( $rows[0] ) );
+				$header = true;
+			}
+
+			foreach ( $rows as $row ) {
+				fputcsv( $file, $row );
+				$last_id = (int) $row['id'];
+			}
+
+			unset( $rows );
+		} while ( true );
+
+		fclose( $file );
+
+		if ( false === $header ) {
+			wp_delete_file( $file_path );
+			wp_send_json_error( array( 'message' => 'No matching records found.' ), 400 );
+		}
+
+		wp_send_json_success( array( 'message' => 'Total records exported: ' . $total_rows . ' <a href="' . esc_url( $file_url ) . '" target="_blank" rel="noopener noreferrer">Download CSV</a>' ), 200 );
+	}
+
+	
+
+
+
+
+
 	private static function escape_csv_value( $value ) {
 		return '"' . str_replace( '"', '""', (string) $value ) . '"';
 	}

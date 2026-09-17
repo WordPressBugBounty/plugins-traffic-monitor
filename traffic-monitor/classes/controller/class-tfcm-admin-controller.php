@@ -12,8 +12,18 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Admin_Controller {
 	
+
+
+
+
+
+
 	public static function register_hooks() {
 		add_action( 'admin_menu', array( __CLASS__, 'register_admin_menu' ) );
 		add_filter( 'default_hidden_columns', array( __CLASS__, 'set_default_hidden_columns' ), 10, 2 );
@@ -22,6 +32,12 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
 	public static function register_admin_menu() {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
@@ -42,6 +58,13 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function render_admin_page() {
 		
 		if ( isset( $_GET['action'] ) && 'view_details' === sanitize_text_field( wp_unslash( $_GET['action'] ) ) && isset( $_GET['id'] ) ) {
@@ -56,6 +79,12 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
 	private static function render_request_details() {
 		
 		if ( ! isset( $_GET['tfcm_details_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['tfcm_details_nonce'] ) ), 'tfcm_details_nonce' ) ) {
@@ -83,6 +112,12 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
 	public static function handle_screen_options() {
 		global $tfcm_admin_page, $tfcm_table;
 		$screen = get_current_screen();
@@ -112,6 +147,14 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
+
+
 	public static function set_default_hidden_columns( $hidden, $screen ) {
 		if ( 'toplevel_page_traffic-monitor' === $screen->id ) {
 			$hidden = array(
@@ -135,6 +178,13 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function save_screen_options( $status, $option, $value ) {
 		if ( 'tfcm_elements_per_page' === $option ) {
 			return (int) $value;
@@ -143,6 +193,12 @@ class TFCM_Admin_Controller {
 	}
 
 	
+
+
+
+
+
+
 	public static function get_hidden_columns( $hidden, $screen ) {
 		if ( 'toplevel_page_traffic-monitor' === $screen->id ) {
 			$user         = get_current_user_id();

@@ -11,8 +11,18 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Lifecycle {
 	
+
+
+
+
+
+
 	public static function register_hooks() {
 		register_activation_hook( TFCM_PLUGIN_FILE, array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( TFCM_PLUGIN_FILE, array( __CLASS__, 'deactivate' ) );
@@ -23,6 +33,10 @@ class TFCM_Lifecycle {
 	}
 
 	
+
+
+
+
 	public static function activate() {
 		
 		TFCM_Database::create_tables();
@@ -37,11 +51,21 @@ class TFCM_Lifecycle {
 	}
 
 	
+
+
+
+
+
+
 	public static function deactivate() {
 		
 	}
 
 	
+
+
+
+
 	public static function uninstall() {
 		$users = get_users( array( 'fields' => 'ID' ) );
 		foreach ( $users as $user_id ) {
@@ -64,6 +88,23 @@ class TFCM_Lifecycle {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public static function run_on_plugin_update() {
 		$current_version = get_option( 'tfcm_plugin_version', '1.0.0' );
 
@@ -121,6 +162,11 @@ class TFCM_Lifecycle {
 	}
 
 	
+
+
+
+
+
 	public static function display_update_notice() {
 		$notice = get_option( 'tfcm_old_log_export_notice', false );
 
@@ -147,6 +193,13 @@ class TFCM_Lifecycle {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function handle_dismiss_export_notice() {
 		check_ajax_referer( 'tfcm_ajax_nonce', 'nonce' );
 

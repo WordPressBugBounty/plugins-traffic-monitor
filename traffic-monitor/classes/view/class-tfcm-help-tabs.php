@@ -13,13 +13,34 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
+
+
 class TFCM_Help_Tabs {
 	
+
+
+
+
+
+
+
 	public static function register_hooks() {
 		add_action( 'admin_head', array( __CLASS__, 'add_help_tab' ) );
 	}
 
 	
+
+
+
+
+
+
+
+
 	public static function add_help_tab() {
 		$screen = get_current_screen();
 
@@ -188,6 +209,15 @@ class TFCM_Help_Tabs {
 	}
 
 	
+
+
+
+
+
+
+
+
+
 	public static function get_bot_categories_help() {
 		if ( ! file_exists( TFCM_BOT_CATEGORIES_CSV_PATH ) ) {
 			return '<p>No bot category information available.</p>';
@@ -226,6 +256,13 @@ class TFCM_Help_Tabs {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function get_ad_platforms_help() {
 		$ad_keys = TFCM_Request_Abstract::get_supported_ad_keys();
 

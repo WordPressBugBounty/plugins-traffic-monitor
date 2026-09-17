@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Traffic Monitor
- * Plugin URI: https://github.com/dmitrimartin817/traffic-monitor
+ * Plugin URI: https://wordpress.org/plugins/traffic-monitor/
  * Description: Lightweight traffic logger for WordPress analytics. View, filter, and export page request data; monitor caching; detect bots; and spot click fraud.
- * Version: 3.2.7
+ * Version: 3.2.8
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Author: Dmitri Martin
@@ -30,7 +30,7 @@ define( 'TFCM_PAGE_REQUESTS_TABLE', $my_table_prefix . 'tfcm_page_requests' );
 define( 'TFCM_BOTS_TABLE', $my_table_prefix . 'tfcm_bots' );
 
 
-define( 'TRAFFIC_MONITOR_VERSION', '3.2.7' );
+define( 'TRAFFIC_MONITOR_VERSION', '3.2.8' );
 define( 'TFCM_PLUGIN_FILE', __FILE__ );
 define( 'TFCM_PLUGIN_DIR', plugin_dir_path( TFCM_PLUGIN_FILE ) );
 define( 'TFCM_BOTS_CSV_PATH', TFCM_PLUGIN_DIR . 'data/bots.csv' );
@@ -42,6 +42,11 @@ define( 'TFCM_REQUEST_LOG_TABLE', $my_table_prefix . 'tfcm_request_log' );
 
 $GLOBALS['TFCM_BOT_BLOCKING']     = false;
 $GLOBALS['TFCM_SKIP_BOT_LOGGING'] = false;
+
+
+
+
+
 
 
 function tfcm_ensure_session_started() {
@@ -99,6 +104,13 @@ if ( is_admin() ) {
 	TFCM_Help_Tabs::register_hooks();
 	TFCM_Admin_Controller::register_hooks();
 }
+
+
+
+
+
+
+
 
 
 function tfcm_handle_requests() {

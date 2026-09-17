@@ -10,14 +10,29 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Assets {
 	
+
+
+
+
 	public static function register_hooks() {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_client_scripts' ) );
 	}
 
 	
+
+
+
+
+
+
+
 	public static function enqueue_admin_scripts( $hook ) {
 		global $tfcm_admin_page;
 
@@ -58,6 +73,13 @@ class TFCM_Assets {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function enqueue_client_scripts() {
 		global $tfcm_request_type;
 		if ( 'HTTP' !== $tfcm_request_type ) {

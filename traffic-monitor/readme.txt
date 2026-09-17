@@ -1,8 +1,10 @@
 === Traffic Monitor ===
 Contributors: dmitriamartin
 Tags: traffic, logging, bot, fraud, analytics
-Tested up to: 6.8
-Stable tag: 3.2.7
+Requires at least: 6.2
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 3.2.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +89,10 @@ No. The plugin is optimized to skip static assets and unnecessary requests.
 2. **Request details** – See full information about a specific visit.
 
 == Changelog ==
+
+= 3.2.8 (2026-09-17) =
+* Improved Export All to process large traffic logs in batches and reduce memory usage.
+* Added an in-progress notice and temporarily disabled the Export All button while an export is processing.
 
 = 3.2.7 (2025-10-21) =
 * Guard session bootstrap to front-end only (no sessions on admin, REST, AJAX, cron, or WP-CLI) to resolve Site Health “Active PHP session” warning.

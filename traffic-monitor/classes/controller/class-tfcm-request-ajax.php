@@ -10,8 +10,14 @@
 defined( 'ABSPATH' ) || exit;
 
 
+
+
+
+
 class TFCM_Request_Ajax extends TFCM_Request_Abstract {
 	
+
+
 	public function __construct() {
 		parent::__construct();
 

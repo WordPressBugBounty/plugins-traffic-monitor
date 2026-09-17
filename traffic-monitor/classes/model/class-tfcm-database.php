@@ -16,6 +16,10 @@ defined( 'ABSPATH' ) || exit;
 
 
 
+
+
+
+
 class TFCM_Database {
 
 	
@@ -23,6 +27,12 @@ class TFCM_Database {
 	
 
 	
+
+
+
+
+
+
 	public static function create_tables() {
 		global $wpdb;
 
@@ -157,6 +167,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function ensure_tables_exist() {
 		global $wpdb;
 
@@ -171,6 +186,15 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
+
+
 	public static function table_exists( $table_name ) {
 		global $wpdb;
 
@@ -180,6 +204,13 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function maybe_upgrade_bot_name_column() {
 		global $wpdb;
 
@@ -205,6 +236,11 @@ class TFCM_Database {
 	
 
 	
+
+
+
+
+
 	public static function get_single_request( $log_id ) {
 		global $wpdb;
 
@@ -256,6 +292,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function get_selected_requests( $log_ids ) {
 		global $wpdb;
 
@@ -311,7 +352,11 @@ class TFCM_Database {
 	}
 
 	
-	public static function get_all_requests() {
+
+
+
+
+	public static function get_request_export_batch( $last_id, $limit ) {
 		global $wpdb;
 
 		return $wpdb->get_results(
@@ -344,19 +389,28 @@ class TFCM_Database {
 			LEFT JOIN %i rf ON pr.referrer_id = rf.id
 			LEFT JOIN %i fp ON pr.fingerprint_id = fp.id
 			LEFT JOIN %i ip ON fp.ip_id = ip.id
-			LEFT JOIN %i ua ON fp.user_agent_id = ua.id',
+			LEFT JOIN %i ua ON fp.user_agent_id = ua.id
+			WHERE pr.id > %d
+			ORDER BY pr.id ASC
+			LIMIT %d',
 				TFCM_PAGE_REQUESTS_TABLE,
 				TFCM_REQUESTED_PAGES_TABLE,
 				TFCM_REFERRER_PAGES_TABLE,
 				TFCM_FINGERPRINT_TABLE,
 				TFCM_IP_TABLE,
-				TFCM_USER_AGENT_TABLE
+				TFCM_USER_AGENT_TABLE,
+				$last_id,
+				$limit
 			),
 			ARRAY_A
 		);
 	}
 
 	
+
+
+
+
 	public static function count_all_requests() {
 		global $wpdb;
 
@@ -366,6 +420,20 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public static function get_request_table_rows( $search_term, $orderby_sql, $per_page, $offset, $filters = array() ) {
 		global $wpdb;
 
@@ -486,6 +554,16 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
+
+
+
 	public static function count_request_table_rows( $search_term, $filters = array() ) {
 		global $wpdb;
 
@@ -571,6 +649,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function get_old_log_table_requests() {
 		global $wpdb;
 
@@ -578,6 +661,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function count_old_log_table_requests() {
 		global $wpdb;
 
@@ -585,6 +673,15 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
+
+
 	public static function get_all_bots() {
 		global $wpdb;
 
@@ -608,6 +705,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function get_recent_session_source( $session_id_hash ) {
 		global $wpdb;
 		
@@ -624,6 +726,11 @@ class TFCM_Database {
 	
 
 	
+
+
+
+
+
 	public static function insert_request( $request ) {
 		global $wpdb;
 
@@ -752,6 +859,14 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
+
 	public static function add_bot_entry( $name, $category, $block = 0, $log_request = 1 ) {
 		global $wpdb;
 
@@ -805,6 +920,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function increment_bot_total_requests( $name ) {
 		global $wpdb;
 		
@@ -818,6 +938,12 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
 	public static function update_bot_block_status( $name, $block ) {
 		global $wpdb;
 
@@ -847,6 +973,12 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
 	public static function update_bot_log_request( $name, $log_request ) {
 		global $wpdb;
 
@@ -876,6 +1008,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function import_bots_from_csv() {
 		global $wpdb, $wp_filesystem;
 
@@ -954,6 +1091,12 @@ class TFCM_Database {
 	
 
 	
+
+
+
+
+
+
 	public static function delete_tables() {
 		global $wpdb;
 
@@ -980,6 +1123,13 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
+
+
 	public static function delete_old_log_table() {
 		global $wpdb;
 
@@ -994,6 +1144,11 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
+
 	public static function delete_selected_requests( $log_ids ) {
 		global $wpdb;
 
@@ -1061,6 +1216,10 @@ class TFCM_Database {
 	}
 
 	
+
+
+
+
 	public static function delete_all_requests() {
 		global $wpdb;
 
